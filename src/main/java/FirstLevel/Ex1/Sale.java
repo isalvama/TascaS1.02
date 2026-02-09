@@ -2,12 +2,11 @@ package FirstLevel.Ex1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static java.util.List.copyOf;
 
 public class Sale {
-    private String clientName;
+    private final String clientName;
     private ArrayList<Product> addedProducts;
     private double totalPrice;
 
