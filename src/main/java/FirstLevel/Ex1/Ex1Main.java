@@ -16,9 +16,7 @@ public class Ex1Main {
         }
         System.out.println(inesShoppingCart.toString());
 
-        try{inesShoppingCart.removeProducts(salt);} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
+        inesShoppingCart.removeProducts(salt);
         System.out.println(inesShoppingCart.toString());
 
         try{inesShoppingCart.removeProducts(milk);} catch (EmptySaleException e) {
@@ -35,9 +33,7 @@ public class Ex1Main {
         }
         System.out.println(inesShoppingCart.toString());
 
-        try{inesShoppingCart.calculateTotal();} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
+        inesShoppingCart.calculateTotal();
         System.out.println(inesShoppingCart.getTotalPrice());
     }
 

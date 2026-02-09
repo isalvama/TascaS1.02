@@ -36,7 +36,7 @@ public class Sale {
        addedProducts.remove(productToRemove);
     }
 
-    public double calculateTotal() throws EmptySaleException{
+    public double calculateTotal() {
         if (addedProducts.isEmpty()){
             throw new EmptySaleException("The shopping cart is empty.");
         }
