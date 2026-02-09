@@ -12,6 +12,7 @@ public class ConsoleReader {
             System.out.println(message);
             try {
                 byte b = sc.nextByte();
+                sc.nextLine();
                 return b;
             } catch (InputMismatchException e) {
                 System.out.println("It is an invalid type" );
@@ -24,6 +25,7 @@ public class ConsoleReader {
             System.out.println(message);
             try {
                 int input = sc.nextInt();
+                sc.nextLine();
                 return input;
             } catch (InputMismatchException e){
                 System.out.println("It is an invalid type" );
@@ -35,7 +37,8 @@ public class ConsoleReader {
     public static float readFloat(String message){
         while (true) {
             System.out.println(message);
-            try {float input = sc.nextFloat(); return input;} catch (InputMismatchException e){
+            try {float input = sc.nextFloat();                 sc.nextLine();
+                return input;} catch (InputMismatchException e){
                 System.out.println("Invalid type");
                 sc.nextLine();
             }
@@ -47,6 +50,8 @@ public class ConsoleReader {
             System.out.println(message);
             try {
                 double input = sc.nextDouble();
+                sc.nextLine();
+
                 return input;
             } catch(InputMismatchException e){
                 System.out.println("Invalid type");
@@ -54,7 +59,18 @@ public class ConsoleReader {
             }
         }
     }
+    public static char readChar(String message) throws InvalidInputTypeException {
+            System.out.println(message);
+            String input = sc.nextLine();
+            if (input.length() != 1 ){
+                throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it has more than one letter");
+            } else if (Character.isDigit(input.charAt(0)) || input.isBlank()) {
+                throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it is not a single letter");
+            }
+                return input.charAt(0);
 
+
+    }
 //// Només accepta un únic caràcter. Si se n’introdueix més d’un, llença una excepció personalitzada.
 //
 //    public static String readString(String message);
