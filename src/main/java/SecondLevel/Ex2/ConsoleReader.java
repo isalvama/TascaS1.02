@@ -81,7 +81,12 @@ public class ConsoleReader {
         return input;
     }
 
-//    public static boolean readYesNo(String message);
-//// Si l’usuari/ària introdueix “s” (minúscula), retorna true. Si introdueix “n”, retorna false.
-//// Qualsevol altra entrada hauria de generar una excepció personalitzada.
+    public static char readYesNo(String message) throws InvalidInputTypeException{
+        System.out.println(message);
+        String input = sc.nextLine();
+        if (!input.equals("y") && !input.equals("n") ){
+            throw new InvalidInputTypeException("Invalid input: the input entered should only be 'y' or 'n' letters");
+        }
+        return input.charAt(0);
+    }
 }

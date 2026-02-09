@@ -10,6 +10,9 @@ public class ConsoleReaderMain {
 
         String name = validateString("Please enter your name");
         System.out.println(name);
+
+        char isEmployed = validateYesNo("Are you employed? Answer only with 'n' or 'y' letters");
+        System.out.println(isEmployed);
     }
     public static char validateChar(String message){
         while(true){
@@ -25,6 +28,15 @@ public class ConsoleReaderMain {
     public static String validateString(String message){
         while(true) {
             try {return ConsoleReader.readString(message);
+            } catch (InvalidInputTypeException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    public static char validateYesNo(String message){
+        while(true) {
+            try {return ConsoleReader.readYesNo(message);
             } catch (InvalidInputTypeException e) {
                 System.out.println(e.getMessage());
             }
