@@ -68,14 +68,19 @@ public class ConsoleReader {
                 throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it is not a single letter");
             }
                 return input.charAt(0);
-
-
     }
-//// Només accepta un únic caràcter. Si se n’introdueix més d’un, llença una excepció personalitzada.
-//
-//    public static String readString(String message);
-//// Llegeix una cadena tal com es rep, però podries validar longitud mínima o contingut si cal.
-//
+
+    public static String readString(String message) throws InvalidInputTypeException {
+        System.out.println(message);
+        String input = sc.nextLine();
+        if (input.isBlank()) {
+            throw new InvalidInputTypeException("The input can't be a blank space");
+        } else if (input.length() < 2) {
+            throw new InvalidInputTypeException("The input can't consist of 0 or 1 only letter");
+        }
+        return input;
+    }
+
 //    public static boolean readYesNo(String message);
 //// Si l’usuari/ària introdueix “s” (minúscula), retorna true. Si introdueix “n”, retorna false.
 //// Qualsevol altra entrada hauria de generar una excepció personalitzada.
