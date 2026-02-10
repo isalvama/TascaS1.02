@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 public class ConsoleReader {
 
-    private static final Scanner sc = new Scanner(System.in);
+    private static final Scanner SC = new Scanner(System.in);
 
     public static byte readByte(String message){
         while (true) {
             System.out.println(message);
             try {
-                byte b = sc.nextByte();
-                sc.nextLine();
+                byte b = SC.nextByte();
+                SC.nextLine();
                 return b;
             } catch (InputMismatchException e) {
                 System.out.println("It is an invalid type" );
-                sc.nextLine();
+                SC.nextLine();
             }
         }
     }
@@ -24,12 +24,12 @@ public class ConsoleReader {
         while (true){
             System.out.println(message);
             try {
-                int input = sc.nextInt();
-                sc.nextLine();
+                int input = SC.nextInt();
+                SC.nextLine();
                 return input;
             } catch (InputMismatchException e){
                 System.out.println("It is an invalid type" );
-                sc.nextLine();
+                SC.nextLine();
             }
         }
     }
@@ -37,10 +37,10 @@ public class ConsoleReader {
     public static float readFloat(String message){
         while (true) {
             System.out.println(message);
-            try {float input = sc.nextFloat();                 sc.nextLine();
+            try {float input = SC.nextFloat();                 SC.nextLine();
                 return input;} catch (InputMismatchException e){
                 System.out.println("Invalid type");
-                sc.nextLine();
+                SC.nextLine();
             }
         }
     }
@@ -49,19 +49,19 @@ public class ConsoleReader {
         while (true) {
             System.out.println(message);
             try {
-                double input = sc.nextDouble();
-                sc.nextLine();
+                double input = SC.nextDouble();
+                SC.nextLine();
 
                 return input;
             } catch(InputMismatchException e){
                 System.out.println("Invalid type");
-                sc.nextLine();
+                SC.nextLine();
             }
         }
     }
     public static char readChar(String message) throws InvalidInputTypeException {
             System.out.println(message);
-            String input = sc.nextLine();
+            String input = SC.nextLine();
             if (input.length() != 1 ){
                 throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it has more than one letter");
             } else if (Character.isDigit(input.charAt(0)) || input.isBlank()) {
@@ -72,7 +72,7 @@ public class ConsoleReader {
 
     public static String readString(String message) throws InvalidInputTypeException {
         System.out.println(message);
-        String input = sc.nextLine();
+        String input = SC.nextLine();
         if (input.isBlank()) {
             throw new InvalidInputTypeException("The input can't be a blank space");
         } else if (input.length() < 2) {
@@ -83,7 +83,7 @@ public class ConsoleReader {
 
     public static char readYesNo(String message) throws InvalidInputTypeException{
         System.out.println(message);
-        String input = sc.nextLine();
+        String input = SC.nextLine();
         if (!input.equals("y") && !input.equals("n") ){
             throw new InvalidInputTypeException("Invalid input: the input entered should only be 'y' or 'n' letters");
         }
