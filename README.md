@@ -13,7 +13,7 @@ The indicated exercises are designed to understand how exceptions work in Java.
 
 
 ## Project Structure
-TascaS1.01
+TascaS1.02
 src/
     └── main/
         └── java/
