@@ -1,4 +1,4 @@
-package FirstLevel.Ex1;
+package first_level.exercise1;
 
 import java.util.ArrayList;
 import java.util.List;

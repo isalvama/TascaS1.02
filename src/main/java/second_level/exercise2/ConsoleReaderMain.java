@@ -1,4 +1,4 @@
-package SecondLevel.Ex2;
+package second_level.exercise2;
 
 public class ConsoleReaderMain {
     public static void main (String[] args){

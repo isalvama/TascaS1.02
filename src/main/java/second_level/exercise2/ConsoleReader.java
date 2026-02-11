@@ -1,4 +1,4 @@
-package SecondLevel.Ex2;
+package second_level.exercise2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
