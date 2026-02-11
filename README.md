@@ -13,21 +13,23 @@ The indicated exercises are designed to understand how exceptions work in Java.
 
 
 ## Project Structure
-TascaS1.02
+```
+TascaS1.02/
 src/
-    └── main/
-        └── java/
-            └── FirstLevel
-                └── Ex1
-                    └── Product.java
-                    └── Sale.java
-                    └── EmptySaleException.java
-                    └── Ex1Main.java
-                └── Ex2
-                    └── ConsoleReader.java
-                    └── InvalidTypeException.java
-                    └── ConsoleReaderMain.java
-
+└── main/
+    └── java/
+       └── first_level/
+            └── exercici1/
+                ├── Product.java
+                ├── Sale.java
+                ├── EmptySaleException.java
+                └── Ex1Main.java
+        └── second_level/
+            └── exercici1/
+                ├── ConsoleReader.java
+                ├── InvalidTypeException.java
+                └── ConsoleReaderMain.java
+```
 
 
 ## Installation
