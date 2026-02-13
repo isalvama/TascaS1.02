@@ -17,10 +17,6 @@ public class Sale {
 
     }
 
-    public List<Product> getAddedProducts(){
-        return copyOf(addedProducts);
-    }
-
     public double getTotalPrice () {
         return totalPrice;
     }
