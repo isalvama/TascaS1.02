@@ -14,6 +14,7 @@ public class ConsoleReaderMain {
         char isEmployed = validateYesNo("Are you employed? Answer only with 'n' or 'y' letters");
         System.out.println(isEmployed);
     }
+
     public static char validateChar(String message){
         while(true){
             try {
@@ -27,7 +28,8 @@ public class ConsoleReaderMain {
 
     public static String validateString(String message){
         while(true) {
-            try {return ConsoleReader.readString(message);
+            try {
+                return ConsoleReader.readString(message);
             } catch (InvalidInputTypeException e) {
                 System.out.println(e.getMessage());
             }

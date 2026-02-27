@@ -7,34 +7,46 @@ public class Ex1Main {
         Product milk = new Product("3a","milk", 1);
 
         Sale inesShoppingCart = new Sale("Inés");
-        inesShoppingCart.addProducts(water);
-        inesShoppingCart.addProducts(salt);
-        inesShoppingCart.addProducts(milk);
-        System.out.println(inesShoppingCart.toString());
-        try{inesShoppingCart.calculateTotalPrice();} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(inesShoppingCart.toString());
+        inesShoppingCart.addProduct(water);
+        inesShoppingCart.addProduct(salt);
+        inesShoppingCart.addProduct(milk);
+        System.out.println(inesShoppingCart);
 
-        inesShoppingCart.removeProducts(salt);
-        System.out.println(inesShoppingCart.toString());
+        runCalculation(inesShoppingCart);
+        System.out.println(inesShoppingCart);
 
-        try{inesShoppingCart.removeProducts(milk);} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(inesShoppingCart.toString());
-        try{inesShoppingCart.calculateTotalPrice();} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
+        runElimination(inesShoppingCart, salt);
+        System.out.println(inesShoppingCart);
+
+        runElimination(inesShoppingCart, milk);
+        System.out.println(inesShoppingCart);
+
+        runCalculation(inesShoppingCart);
         System.out.println(inesShoppingCart.getTotalPrice());
 
-        try{inesShoppingCart.removeProducts(water);} catch (EmptySaleException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(inesShoppingCart.toString());
+        runElimination(inesShoppingCart, water);
+        System.out.println(inesShoppingCart);
 
-        inesShoppingCart.calculateTotalPrice();
+       runCalculation(inesShoppingCart);
         System.out.println(inesShoppingCart.getTotalPrice());
+    }
+
+    public static void runElimination (Sale sale, Product productToRemove) {
+        try {
+            sale.removeProduct(productToRemove);
+            System.out.println("Product " + productToRemove + "removed from productList successfully");
+        } catch (EmptySaleException ese) {
+            System.err.println("Error: " + ese.getMessage());
+        }
+    }
+
+    public static void runCalculation (Sale sale) {
+        try {
+            double totalPrice = sale.calculateTotalPrice();
+            System.out.println("Total price of product List: " + totalPrice);
+        } catch (EmptySaleException ese) {
+            System.err.println("Error: " + ese.getMessage());
+        }
     }
 
 

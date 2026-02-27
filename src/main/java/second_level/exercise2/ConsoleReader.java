@@ -15,11 +15,12 @@ public class ConsoleReader {
                 SC.nextLine();
                 return b;
             } catch (InputMismatchException e) {
-                System.out.println("It is an invalid type" );
+                System.out.println("It is an invalid type");
                 SC.nextLine();
             }
         }
     }
+
     public static int readInt(String message){
         while (true){
             System.out.println(message);
@@ -28,7 +29,7 @@ public class ConsoleReader {
                 SC.nextLine();
                 return input;
             } catch (InputMismatchException e){
-                System.out.println("It is an invalid type" );
+                System.out.println("It is an invalid type");
                 SC.nextLine();
             }
         }
@@ -37,8 +38,11 @@ public class ConsoleReader {
     public static float readFloat(String message){
         while (true) {
             System.out.println(message);
-            try {float input = SC.nextFloat();                 SC.nextLine();
-                return input;} catch (InputMismatchException e){
+            try {
+                float input = SC.nextFloat();
+                SC.nextLine();
+                return input;
+            } catch (InputMismatchException e){
                 System.out.println("Invalid type");
                 SC.nextLine();
             }
@@ -51,7 +55,6 @@ public class ConsoleReader {
             try {
                 double input = SC.nextDouble();
                 SC.nextLine();
-
                 return input;
             } catch(InputMismatchException e){
                 System.out.println("Invalid type");
@@ -59,10 +62,11 @@ public class ConsoleReader {
             }
         }
     }
+
     public static char readChar(String message) throws InvalidInputTypeException {
             System.out.println(message);
             String input = SC.nextLine();
-            if (input.length() != 1 ){
+            if (input.length() != 1) {
                 throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it has more than one letter");
             } else if (Character.isDigit(input.charAt(0)) || input.isBlank()) {
                 throw new InvalidInputTypeException(input + " cannot be parsed into a char variable as it is not a single letter");

@@ -3,11 +3,9 @@ package first_level.exercise1;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.List.copyOf;
-
 public class Sale {
     private final String clientName;
-    private ArrayList<Product> addedProducts;
+    private List<Product> addedProducts;
     private double totalPrice;
 
     public Sale(String clientName){
@@ -21,11 +19,13 @@ public class Sale {
         return totalPrice;
     }
 
-    public void addProducts(Product newProduct){
-        addedProducts.add(newProduct);
+    public void addProduct (Product newProduct) {
+        if (newProduct != null) {
+            addedProducts.add(newProduct);
+        }
     }
 
-    public void removeProducts(Product productToRemove)throws EmptySaleException{
+    public void removeProduct (Product productToRemove) {
         if (addedProducts.isEmpty()){
             throw new EmptySaleException("The shopping cart is empty.");
         }
@@ -34,6 +34,7 @@ public class Sale {
 
     public double calculateTotalPrice() {
         if (addedProducts.isEmpty()){
+            this.totalPrice = 0;
             throw new EmptySaleException("The shopping cart is empty.");
         }
         double sum = 0;
