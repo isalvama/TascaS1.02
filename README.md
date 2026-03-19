@@ -1,4 +1,4 @@
-# Tasca S1 02
+# Sprint 1.2: Exceptions
 
 ## Description
 
